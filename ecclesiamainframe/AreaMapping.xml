@@ -1,0 +1,9 @@
+<sql-result-set-mapping name="AreaMappingXml">
+    <constructor-result target-class="com.app.ecclesiamainframe.entity.Areas">
+      <column name="areaId" />
+      <column name="areaName" />
+      <column name="jurisdiction" />
+      <column name="environ" />
+      <column name="leader" /> 
+    </constructor-result>
+</sql-result-set-mapping>

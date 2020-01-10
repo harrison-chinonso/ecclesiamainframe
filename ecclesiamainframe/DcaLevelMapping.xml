@@ -1,0 +1,6 @@
+<sql-result-set-mapping name="DcaLevelMappingXml">
+    <constructor-result target-class="com.app.ecclesiamainframe.entity.DcaLevels">
+      <column name="levelId" />
+      <column name="dcaName" /> 
+    </constructor-result>
+</sql-result-set-mapping>

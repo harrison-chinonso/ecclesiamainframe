@@ -1,0 +1,26 @@
+
+<sql-result-set-mapping name="MemberMappingXml">
+    <constructor-result target-class="com.app.ecclesiamainframe.entity.Members">
+      <column name="memberId" ></column>
+      <column name="dcaRegno" />
+      <column name="address" />
+      <column name="age" />
+      <column name="areaId" />
+      <column name="birthday" />
+      <column name="cellId" />
+      <column name="dca" />
+      <column name="department" />
+      <column name="editor" />
+      <column name="firstTime" />
+      <column name="gender" />
+      <column name="maritalStatus" />
+      <column name="memberEmail" />
+      <column name="memberHomePhoneNum" />
+      <column name="memberMobileNum" />
+      <column name="memberName" />
+      <column name="note"/>
+      <column name="secondTime" />      
+    </constructor-result>
+</sql-result-set-mapping>
+
+

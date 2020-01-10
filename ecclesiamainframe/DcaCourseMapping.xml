@@ -1,0 +1,8 @@
+<sql-result-set-mapping name="DcaCourseMappingXml">
+    <constructor-result target-class="com.app.ecclesiamainframe.entity.DcaCourses">
+      <column name="courseId" />
+      <column name="code" />
+      <column name="courseName" />
+      <column name="levelId" />
+    </constructor-result>
+</sql-result-set-mapping>
