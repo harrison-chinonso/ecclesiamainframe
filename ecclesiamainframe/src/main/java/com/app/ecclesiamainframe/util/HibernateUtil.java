@@ -12,7 +12,15 @@ import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 
+import com.app.ecclesiamainframe.entity.AreaReports;
+import com.app.ecclesiamainframe.entity.Areas;
+import com.app.ecclesiamainframe.entity.CellReports;
+import com.app.ecclesiamainframe.entity.Cells;
+import com.app.ecclesiamainframe.entity.DcaCourses;
+import com.app.ecclesiamainframe.entity.DcaLevels;
+import com.app.ecclesiamainframe.entity.DcaStudents;
 import com.app.ecclesiamainframe.entity.Members;
+import com.app.ecclesiamainframe.entity.Users;
 
 /**
  * @author Harry
@@ -47,6 +55,14 @@ public class HibernateUtil {
             // Create MetadataSources
             MetadataSources sources = new MetadataSources(registry);
             sources.addAnnotatedClass(Members.class);
+            sources.addAnnotatedClass(Users.class);
+            sources.addAnnotatedClass(DcaStudents.class);
+            sources.addAnnotatedClass(AreaReports.class);
+            sources.addAnnotatedClass(Areas.class);
+            sources.addAnnotatedClass(Cells.class);
+            sources.addAnnotatedClass(CellReports.class);
+            sources.addAnnotatedClass(DcaCourses.class);
+            sources.addAnnotatedClass(DcaLevels.class);
             
             // Create Metadata
             Metadata metadata = sources.getMetadataBuilder().build();

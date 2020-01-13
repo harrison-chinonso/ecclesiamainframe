@@ -3,26 +3,25 @@
  */
 package com.app.ecclesiamainframe.service.impl;
 
-//import java.util.ArrayList;
-//import java.util.Collection;
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Optional;
+import java.util.ResourceBundle;
 
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+//import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
-
-//import org.primefaces.component.inputtext.InputText;
-//import org.springframework.security.core.GrantedAuthority;
-//import org.springframework.security.core.authority.SimpleGrantedAuthority;
-//import org.springframework.security.core.userdetails.User;
-//import org.springframework.security.core.userdetails.UserDetails;
-//import org.springframework.security.core.userdetails.UsersService;
-//import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
 
 import org.springframework.stereotype.Service;
@@ -37,7 +36,7 @@ import com.app.ecclesiamainframe.util.HibernateUtil;
  *
  */
 @Service
-public class UsersServiceImpl implements UsersService {
+public class UsersServiceImpl implements UsersService,UserDetailsService {
 	Session session = null;
     Transaction transaction = null;
 	@Autowired
@@ -86,7 +85,7 @@ public class UsersServiceImpl implements UsersService {
 	         session = HibernateUtil.getSessionFactory().openSession();
 	         transaction = session.beginTransaction();
 	      // Native query selecting all columns
-	         Query query = session.createNativeQuery("SELECT * FROM users_tb where username like :userName","UserMapping")
+	         Query query = session.createNativeQuery("SELECT * FROM users_tb where username like :userName",Users.class)
 	        		 .setParameter("userName","%"+userName+"%"); //named parameter binding 
 	         users = (Users) query.getSingleResult();
 	         transaction.commit(); 
@@ -105,21 +104,25 @@ public class UsersServiceImpl implements UsersService {
 	/**
 	 * Construct UserDetails instance required by spring security
 	 */
-//	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
-//		
-//		List<Users> user = usersDao.findByUsername(userName);
-//		
-//		if (user == null) {
-//			throw new UsernameNotFoundException(String.format(getMessageBundle().getString("badCredentials"), userName));
-//		}
-//		
-//		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-//		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
-//		
-//		User userDetails = new User(user.getUserName(), user.getPassword(), authorities);
-//		
-//		return userDetails;
-//	}
+	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+		
+		Users user = usersDao.findByUsername(userName);
+		
+		if (user == null) {
+			throw new UsernameNotFoundException(String.format(getMessageBundle().getString("badCredentials"), userName));
+		}
+		
+		Collection<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+		authorities.add(new SimpleGrantedAuthority("ROLE_USER"));
+		
+		User userDetails = new User(user.getUsername(), user.getPassword(), authorities);
+		
+		return userDetails;
+	}
+	
+	protected ResourceBundle getMessageBundle() {
+		return ResourceBundle.getBundle("message-labels");
+	}
 
 }
 

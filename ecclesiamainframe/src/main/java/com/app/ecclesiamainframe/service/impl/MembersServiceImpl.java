@@ -58,7 +58,7 @@ public class MembersServiceImpl implements MembersService {
 	         transaction = session.beginTransaction();
 	       
 	      // Native query selecting all columns
-	         Query query = session.createNativeQuery("SELECT * FROM members_tb where memberName like :memberName","MemberMapping")
+	         Query query = session.createNativeQuery("SELECT * FROM members_tb where memberName like :memberName",Members.class)
 	        		 .setParameter("memberName","%"+memberName+"%"); //named parameter binding 
 	        		members = query.getResultList();
 	         transaction.commit(); 

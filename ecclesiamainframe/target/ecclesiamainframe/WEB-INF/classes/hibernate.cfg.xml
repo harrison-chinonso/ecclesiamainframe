@@ -29,6 +29,15 @@
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
 
-		<mapping class="com.infotech.entities.User" />
+		<mapping class="com.app.ecclesiamainframe.entity.Users" />
+		<mapping class="com.app.ecclesiamainframe.entity.Members" /> 
+		<mapping class="com.app.ecclesiamainframe.entity.Areas" />
+		<mapping class="com.app.ecclesiamainframe.entity.AreaReports"/> 
+		<mapping class="com.app.ecclesiamainframe.entity.CellReports" />
+		<mapping class="com.app.ecclesiamainframe.entity.Cells" /> 
+		<mapping class="com.app.ecclesiamainframe.entity.DcaCourses" />
+		<mapping class="com.app.ecclesiamainframe.entity.DcaLevels" /> 
+		<mapping class="com.app.ecclesiamainframe.entity.DcaStudents" />
+		
 	</session-factory>
 </hibernate-configuration>

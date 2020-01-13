@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+//import org.springframework.security.crypto.password.PasswordEncoder;
+
 //import org.springframework.security.authentication.encoding.Md5PasswordEncoder;
 //import org.springframework.security.authentication.encoding.PasswordEncoder;
 
@@ -70,15 +72,24 @@ public class Users implements Serializable {
 	private String permission;
 	
 	
-//	public String getPassword() {
-//		return password;
-//	}
+	public String getPassword() {
+		return password;
+	}
 	
-//	public void setPassword(String password) {
-//		PasswordEncoder crypto = new Md5PasswordEncoder();
+	public void setPassword(String password) {
+		//PasswordEncoder crypto = new Md5PasswordEncoder();
 //		this.password = crypto.encodePassword(password, null);
-//	}
+		this.password = password;
+	}
 	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	public Users(Long userId, String username,String password, String name, Long areaId, String permission) {
 	
 		this.userId = userId;
@@ -90,6 +101,7 @@ public class Users implements Serializable {
     }
 	
 }
+
 
 
 

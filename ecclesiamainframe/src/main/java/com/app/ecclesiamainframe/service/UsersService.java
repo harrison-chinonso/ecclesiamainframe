@@ -29,3 +29,4 @@ public interface UsersService {
 
 	Users findByUsername(String userName);
 }
+

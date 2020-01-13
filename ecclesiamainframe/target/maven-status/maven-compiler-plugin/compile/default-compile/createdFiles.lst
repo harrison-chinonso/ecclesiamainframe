@@ -5,10 +5,13 @@ com\app\ecclesiamainframe\service\AreasService.class
 com\app\ecclesiamainframe\entity\Areas.class
 com\app\ecclesiamainframe\controller\CellReportsController.class
 com\app\ecclesiamainframe\dao\CellsDao.class
+com\app\ecclesiamainframe\models\AuthenticationRequest.class
 com\app\ecclesiamainframe\service\DcaStudentsService.class
 com\app\ecclesiamainframe\service\impl\AreaReportsServiceImpl.class
 com\app\ecclesiamainframe\dao\AreaReportsDao.class
+com\app\ecclesiamainframe\filter\JwtRequestFilter.class
 com\app\ecclesiamainframe\dao\CellReportsDao.class
+com\app\ecclesiamainframe\util\JwtUtil.class
 com\app\ecclesiamainframe\controller\AreaReportsController.class
 com\app\ecclesiamainframe\entity\DcaStudents.class
 com\app\ecclesiamainframe\service\impl\CellsServiceImpl.class
@@ -20,11 +23,13 @@ com\app\ecclesiamainframe\controller\UsersController.class
 com\app\ecclesiamainframe\entity\CellReports.class
 com\app\ecclesiamainframe\dao\DcaLevelsDao.class
 com\app\ecclesiamainframe\dao\DcaStudentsDao.class
+com\app\ecclesiamainframe\models\AuthenticationResponse.class
 com\app\ecclesiamainframe\service\UsersService.class
 com\app\ecclesiamainframe\service\impl\AreasServiceImpl.class
 com\app\ecclesiamainframe\controller\MembersController.class
 com\app\ecclesiamainframe\dao\UsersDao.class
 com\app\ecclesiamainframe\service\impl\UsersLoginServiceImpl.class
+com\app\ecclesiamainframe\util\UserAuthenticator.class
 com\app\ecclesiamainframe\controller\DcaStudentsController.class
 com\app\ecclesiamainframe\util\HibernateUtil.class
 com\app\ecclesiamainframe\util\MetadataExtractorIntegrator.class
