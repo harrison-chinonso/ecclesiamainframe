@@ -3,11 +3,17 @@
  */
 package com.app.ecclesiamainframe;
 
+//import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+//import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+//import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
+//import org.springframework.context.annotation.Bean;
+//
+//import com.app.ecclesiamainframe.controller.AppErrorController;
 
+//import org.springframework.context.annotation.ComponentScan;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 
 
@@ -17,7 +23,8 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
  */
 
 @SpringBootApplication
-@EnableAutoConfiguration
+//@EnableAutoConfiguration
+//@ComponentScan
 public class SpringBootApplications extends SpringBootServletInitializer {
 
 	/**
