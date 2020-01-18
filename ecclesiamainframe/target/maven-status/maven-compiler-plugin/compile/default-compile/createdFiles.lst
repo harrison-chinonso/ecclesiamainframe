@@ -6,6 +6,7 @@ com\app\ecclesiamainframe\entity\Areas.class
 com\app\ecclesiamainframe\controller\CellReportsController.class
 com\app\ecclesiamainframe\dao\CellsDao.class
 com\app\ecclesiamainframe\models\AuthenticationRequest.class
+com\app\ecclesiamainframe\controller\AppErrorController.class
 com\app\ecclesiamainframe\service\DcaStudentsService.class
 com\app\ecclesiamainframe\service\impl\AreaReportsServiceImpl.class
 com\app\ecclesiamainframe\dao\AreaReportsDao.class

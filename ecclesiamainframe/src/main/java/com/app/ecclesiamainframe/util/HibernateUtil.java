@@ -41,11 +41,19 @@ public class HibernateUtil {
             StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
 
             //Configuration properties
+//            Map<String, Object> settings = new HashMap<>();
+//            settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
+//            settings.put(Environment.URL, "jdbc:mysql://localhost:3306/ecclesia_mainframe_db?useSSL=false");
+//            settings.put(Environment.USER, "devteam");
+//            settings.put(Environment.PASS, "softmysql2019");
+//            settings.put(Environment.HBM2DDL_AUTO, "validate");
+//            settings.put(Environment.SHOW_SQL, true);
+            
             Map<String, Object> settings = new HashMap<>();
-            settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-            settings.put(Environment.URL, "jdbc:mysql://localhost:3306/ecclesia_mainframe_db?useSSL=false");
-            settings.put(Environment.USER, "devteam");
-            settings.put(Environment.PASS, "softmysql2019");
+            settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
+            settings.put(Environment.URL, "jdbc:mysql://bf6ef182b3f6be:8c066a58@us-cdbr-gcp-east-01.cleardb.net:3306/gcp_cc6c46add7dbba33ef02?useSSL=false");
+            settings.put(Environment.USER, "bf6ef182b3f6be");
+            settings.put(Environment.PASS, "8c066a58");
             settings.put(Environment.HBM2DDL_AUTO, "validate");
             settings.put(Environment.SHOW_SQL, true);
             

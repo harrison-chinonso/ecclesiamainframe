@@ -5,11 +5,17 @@
 
 <hibernate-configuration>
 	<session-factory>
-		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+	<!--<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 		<property name="hibernate.connection.url">jdbc:mysql://localhost:4406/test</property>
 		<property name="hibernate.connection.username">devteam</property>
 		<property name="hibernate.connection.password">softmysql2019</property>
-		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQL5Dialect</property> -->	
+		
+		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+		<property name="hibernate.connection.url">jdbc:mysql://bf6ef182b3f6be:8c066a58@us-cdbr-gcp-east-01.cleardb.net:3306/gcp_cc6c46add7dbba33ef02</property>
+		<property name="hibernate.connection.username">bf6ef182b3f6be</property>
+		<property name="hibernate.connection.password">8c066a58</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 		
 		<property name="hibernate.connection.provider_class">org.hibernate.hikaricp.internal.HikariCPConnectionProvider</property>
 
