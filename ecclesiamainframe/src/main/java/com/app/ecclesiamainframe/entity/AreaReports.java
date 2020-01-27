@@ -15,6 +15,8 @@ import javax.persistence.Id;
 //import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -23,32 +25,8 @@ import lombok.Data;
  */
 @Entity
 @Table(name="areaReports_tb")
+@ApiModel(description = "All details about the Area Report.")
 @Data
-//@SqlResultSetMapping(
-//	name = "AreaMapping",
-//classes = @ConstructorResult(
-//    targetClass = AreaReports.class,
-//    columns = {
-//    		@ColumnResult(name = "areaReportId", type = Long.class),
-//    		@ColumnResult(name = "areaId", type = Long.class),
-//            @ColumnResult(name = "date"),
-//            @ColumnResult(name = "targetMembers", type = Long.class),
-//            @ColumnResult(name = "totalMembers", type = Long.class),
-//            @ColumnResult(name = "newCell", type = Long.class),
-//            @ColumnResult(name = "noOfCell", type = Long.class),
-//            @ColumnResult(name = "noOfCellHeld", type = Long.class),
-//            @ColumnResult(name = "cellAttendance", type = Long.class),
-//            @ColumnResult(name = "churchAttendance", type = Long.class),
-//            @ColumnResult(name = "prevChurchMVP", type = Long.class),
-//            @ColumnResult(name = "newChurchMVP", type = Long.class),
-//            @ColumnResult(name = "secondTimer", type = Long.class),
-//            @ColumnResult(name = "newWorkforce", type = Long.class),
-//            @ColumnResult(name = "outreach", type = Long.class),
-//            @ColumnResult(name = "currentlyInDCA", type = Long.class),
-//            @ColumnResult(name = "currentlyInMaturity", type = Long.class),
-//            @ColumnResult(name = "encounter", type = Long.class),
-//            @ColumnResult(name = "dli", type = Long.class)       
-//	}))
 public class AreaReports implements Serializable {
 	
 	/**
@@ -61,60 +39,79 @@ private static final long serialVersionUID = 1L;
 @Id
 @Column(name="areaReportId")
 @GeneratedValue(strategy = GenerationType.AUTO)
+@ApiModelProperty(notes = "The database generated areaReport ID")
 private Long areaReportId;
 
 @Column(name="areaId")
+@ApiModelProperty(notes = "The area ID")
 private Long areaId;
 
 @Column(name="date")
+@ApiModelProperty(notes = "The date of report")
 private String date;
 
 @Column(name="targetMembers")
+@ApiModelProperty(notes = "The area targetted membership")
 private Long targetMembers;
 
 @Column(name="totalMembers")
+@ApiModelProperty(notes = "The area total membership")
 private Long totalMembers;
 
 @Column(name="newCell")
+@ApiModelProperty(notes = "The number of new cells in the area")
 private Long newCell;
 
 @Column(name="noOfCell")
+@ApiModelProperty(notes = "The number of cells in the area")
 private Long noOfCell;
 
 @Column(name="noOfCellHeld")
+@ApiModelProperty(notes = "The number of cells that held in the area")
 private Long noOfCellHeld;
 
 @Column(name="cellAttendance")
+@ApiModelProperty(notes = "The number of members in area that attended various cells meeting")
 private Long cellAttendance;
 
 @Column(name="churchAttendance")
+@ApiModelProperty(notes = "The number of members that where in church")
 private Long churchAttendance;
 
 @Column(name="prevChurchMVP")
+@ApiModelProperty(notes = "The number persons that came to church the previous week for the first time from this area")
 private Long prevChurchMVP;
 
 @Column(name="newChurchMVP")
+@ApiModelProperty(notes = "The number persons that came to church for the first time from this area")
 private Long newChurchMVP;
 
 @Column(name="secondTimer")
+@ApiModelProperty(notes = "The number persons that came to church for the second time from this area")
 private Long secondTimer;
 
 @Column(name="newWorkforce")
+@ApiModelProperty(notes = "The number persons that joined the workforce from this area")
 private Long newWorkforce;
 
 @Column(name="outreach")
+@ApiModelProperty(notes = "The number persons that went for outreach from this area")
 private Long outreach;
 
 @Column(name="currentlyInDCA")
+@ApiModelProperty(notes = "The number persons that are currently attending dca from this area")
 private Long currentlyInDCA;
 
 @Column(name="currentlyInMaturity")
+@ApiModelProperty(notes = "The number persons that are currently attending maturity class from this area")
 private Long currentlyInMaturity;
 
 @Column(name="encounter")
+@ApiModelProperty(notes = "The number persons that joined the encounter from this area")
 private Long encounter;
 
 @Column(name="dli")
+@ApiModelProperty(notes = "The number persons that currently attending dli from this area")
 private Long dli;
 
 public AreaReports(Long areaReportId,Long areaId, String date, Long targetMembers, Long totalMembers, Long newCell, Long noOfCell, Long noOfCellHeld,

@@ -1,4 +1,3 @@
-com\app\ecclesiamainframe\dao\UsersLoginDao.class
 com\app\ecclesiamainframe\controller\DcaLevelsController.class
 com\app\ecclesiamainframe\entity\DcaCourses.class
 com\app\ecclesiamainframe\service\AreasService.class
@@ -8,12 +7,14 @@ com\app\ecclesiamainframe\dao\CellsDao.class
 com\app\ecclesiamainframe\models\AuthenticationRequest.class
 com\app\ecclesiamainframe\controller\AppErrorController.class
 com\app\ecclesiamainframe\service\DcaStudentsService.class
+com\app\ecclesiamainframe\controller\Authentication.class
 com\app\ecclesiamainframe\service\impl\AreaReportsServiceImpl.class
 com\app\ecclesiamainframe\dao\AreaReportsDao.class
 com\app\ecclesiamainframe\filter\JwtRequestFilter.class
 com\app\ecclesiamainframe\dao\CellReportsDao.class
 com\app\ecclesiamainframe\util\JwtUtil.class
 com\app\ecclesiamainframe\controller\AreaReportsController.class
+com\app\ecclesiamainframe\util\SwaggerConfig.class
 com\app\ecclesiamainframe\entity\DcaStudents.class
 com\app\ecclesiamainframe\service\impl\CellsServiceImpl.class
 com\app\ecclesiamainframe\dao\MembersDao.class
@@ -29,7 +30,6 @@ com\app\ecclesiamainframe\service\UsersService.class
 com\app\ecclesiamainframe\service\impl\AreasServiceImpl.class
 com\app\ecclesiamainframe\controller\MembersController.class
 com\app\ecclesiamainframe\dao\UsersDao.class
-com\app\ecclesiamainframe\service\impl\UsersLoginServiceImpl.class
 com\app\ecclesiamainframe\util\UserAuthenticator.class
 com\app\ecclesiamainframe\controller\DcaStudentsController.class
 com\app\ecclesiamainframe\util\HibernateUtil.class
@@ -37,10 +37,8 @@ com\app\ecclesiamainframe\util\MetadataExtractorIntegrator.class
 com\app\ecclesiamainframe\service\impl\DcaStudentsServiceImpl.class
 com\app\ecclesiamainframe\service\impl\UsersServiceImpl.class
 com\app\ecclesiamainframe\service\impl\DcaCoursesServiceImpl.class
-com\app\ecclesiamainframe\service\UsersLoginService.class
 com\app\ecclesiamainframe\service\DcaLevelsService.class
 com\app\ecclesiamainframe\service\CellReportsService.class
-com\app\ecclesiamainframe\controller\UsersLoginController.class
 com\app\ecclesiamainframe\service\DcaCoursesService.class
 com\app\ecclesiamainframe\dao\AreasDao.class
 com\app\ecclesiamainframe\entity\DcaLevels.class
@@ -53,7 +51,6 @@ com\app\ecclesiamainframe\service\impl\DcaLevelsServiceImpl.class
 com\app\ecclesiamainframe\controller\DcaCoursesController.class
 com\app\ecclesiamainframe\service\impl\MembersServiceImpl.class
 com\app\ecclesiamainframe\controller\AreasController.class
-com\app\ecclesiamainframe\entity\UsersLogin.class
 com\app\ecclesiamainframe\service\MembersService.class
 com\app\ecclesiamainframe\entity\AreaReports.class
 com\app\ecclesiamainframe\service\impl\CellReportsServiceImpl.class

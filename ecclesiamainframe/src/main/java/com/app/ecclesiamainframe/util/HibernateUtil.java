@@ -3,8 +3,8 @@
  */
 package com.app.ecclesiamainframe.util;
 
-import java.util.HashMap;
-import java.util.Map;
+//import java.util.HashMap;
+//import java.util.Map;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;
@@ -26,7 +26,11 @@ import com.app.ecclesiamainframe.entity.Users;
  * @author Harry
  *
  */
-import org.hibernate.cfg.Environment;
+
+import org.hibernate.cfg.Configuration;
+//import org.hibernate.service.ServiceRegistry;
+//import org.hibernate.cfg.Environment;
+//import org.hibernate.service.ServiceRegistry;
 
 
 public class HibernateUtil {
@@ -37,28 +41,24 @@ public class HibernateUtil {
       if (sessionFactory == null) {
          try {
         	 
+        	 // Create the SessionFactory from hibernate.cfg.xml
+         	Configuration configuration = new Configuration();
+         	configuration.configure("hibernate.cfg.xml");
+         	System.out.println("Hibernate Configuration loaded");
+        	 
         	 // Create StandardServiceRegistry
             StandardServiceRegistryBuilder registryBuilder = new StandardServiceRegistryBuilder();
-
-            //Configuration properties
-//            Map<String, Object> settings = new HashMap<>();
-//            settings.put(Environment.DRIVER, "com.mysql.cj.jdbc.Driver");
-//            settings.put(Environment.URL, "jdbc:mysql://localhost:3306/ecclesia_mainframe_db?useSSL=false");
-//            settings.put(Environment.USER, "devteam");
-//            settings.put(Environment.PASS, "softmysql2019");
-//            settings.put(Environment.HBM2DDL_AUTO, "validate");
-//            settings.put(Environment.SHOW_SQL, true);
             
-            Map<String, Object> settings = new HashMap<>();
-            settings.put(Environment.DRIVER, "com.mysql.jdbc.Driver");
-            settings.put(Environment.URL, "jdbc:mysql://bf6ef182b3f6be:8c066a58@us-cdbr-gcp-east-01.cleardb.net:3306/gcp_cc6c46add7dbba33ef02?useSSL=false");
-            settings.put(Environment.USER, "bf6ef182b3f6be");
-            settings.put(Environment.PASS, "8c066a58");
-            settings.put(Environment.HBM2DDL_AUTO, "validate");
-            settings.put(Environment.SHOW_SQL, true);
-            
-            registryBuilder.applySettings(settings);
+//            registryBuilder.applySettings(settings);
+            registryBuilder.applySettings(configuration.getProperties());
             registry = registryBuilder.build();
+         	
+         	//apply configuration property settings to StandardServiceRegistryBuilder
+        	////ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build();
+        	////System.out.println("Hibernate serviceRegistry created");
+        	
+        	////SessionFactory sessionFactory = configuration.buildSessionFactory(serviceRegistry);
+
             
             // Create MetadataSources
             MetadataSources sources = new MetadataSources(registry);
@@ -71,8 +71,8 @@ public class HibernateUtil {
             sources.addAnnotatedClass(CellReports.class);
             sources.addAnnotatedClass(DcaCourses.class);
             sources.addAnnotatedClass(DcaLevels.class);
-            
-            // Create Metadata
+//            
+//            // Create Metadata
             Metadata metadata = sources.getMetadataBuilder().build();
             
             // Create SessionFactory

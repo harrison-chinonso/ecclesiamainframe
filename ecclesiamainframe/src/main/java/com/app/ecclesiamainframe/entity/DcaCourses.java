@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -23,6 +25,7 @@ import lombok.Data;
  */
 @Entity
 @Table(name="dcaCourses_tb")
+@ApiModel(description = "All details about Dca Courses. ")
 @Data
 @SqlResultSetMapping(
 	name = "DcaCoursesMapping",
@@ -46,15 +49,19 @@ public DcaCourses() {}
 	@Id
 	@Column(name="courseId")
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ApiModelProperty(notes = "The database generated Dca Course ID")
 	private Long courseId;
 	
 	@Column(name="code")
+	@ApiModelProperty(notes = "The course code")
 	private String code;
 	
 	@Column(name="courseName")
+	@ApiModelProperty(notes = "The name of course")
 	private String courseName;
 	
 	@Column(name="levelId")
+	@ApiModelProperty(notes = "The level where course fall under")
 	private Long levelId;
 	
 	public DcaCourses(Long courseId, String code, String courseName, Long levelId) {

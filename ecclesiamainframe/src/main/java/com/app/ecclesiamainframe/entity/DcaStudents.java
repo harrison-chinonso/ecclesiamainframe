@@ -15,6 +15,8 @@ import javax.persistence.Id;
 //import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -23,18 +25,8 @@ import lombok.Data;
  */
 @Entity
 @Table(name="dcaStudents_tb")
+@ApiModel(description = "All details about the Dca Stdents.")
 @Data
-//@SqlResultSetMapping(
-//	name = "DcaStudentMapping",
-//classes = @ConstructorResult(
-//    targetClass = DcaStudents.class,
-//    columns = {
-//        @ColumnResult(name = "studentId", type = Long.class),
-//        @ColumnResult(name = "memberId", type = Long.class),
-//        @ColumnResult(name = "score", type = Long.class),
-//        @ColumnResult(name = "dcaCourseId", type = Long.class),
-//        @ColumnResult(name = "levelId", type = Long.class)
-//	}))
 public class DcaStudents implements Serializable {
 	
 		/**
@@ -47,18 +39,23 @@ public class DcaStudents implements Serializable {
 	@Id
 	@Column(name="studentId")
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ApiModelProperty(notes = "The database generated student Id")
 	private Long studentId;
 	
 	@Column(name="memberId")
+	@ApiModelProperty(notes = "The student's membership id")
 	private Long memberId;
 	
 	@Column(name="score")
+	@ApiModelProperty(notes = "The student's score in a particular dca exams")
 	private Long score;
 	
 	@Column(name="dcaCourseId")
+	@ApiModelProperty(notes = "The reference id of course attended by student ")
 	private Long dcaCourseId;
 	
 	@Column(name="levelId")
+	@ApiModelProperty(notes = "The reference id of level attended by student")
 	private Long levelId;
 	
 	

@@ -6,11 +6,11 @@
     http://www.springframework.org/schema/beans/spring-beans.xsd
     http://www.springframework.org/schema/context
     http://www.springframework.org/schema/context/spring-context.xsd">
-    
+  <!--    
     <bean id="membersService"
     	class="com.app.ecclesiamainframe.service.impl.MembersServiceImpl" />
     	
      <bean id="usersService"
     	class="com.app.ecclesiamainframe.service.impl.UsersServiceImpl" />
-
-</beans>
+-->
+</beans>  

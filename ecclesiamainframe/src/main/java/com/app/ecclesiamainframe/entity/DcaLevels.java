@@ -15,6 +15,8 @@ import javax.persistence.Id;
 import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -24,6 +26,7 @@ import lombok.Data;
 @Entity
 @Table(name="dcaLevels_tb")
 @Data
+@ApiModel(description = "All details about Dca Levels. ")
 @SqlResultSetMapping(
 	name = "DCALevelsMapping",
 classes = @ConstructorResult(
@@ -44,9 +47,11 @@ private static final long serialVersionUID = 1L;
 	@Id
 	@Column(name="levelId")
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@ApiModelProperty(notes = "The database generated level ID")
 	private Long levelId;
 	
 	@Column(name="dcaName")
+	@ApiModelProperty(notes = "The name of level")
 	private String dcaName;
 	
 	public DcaLevels(Long levelId, String dcaName) {

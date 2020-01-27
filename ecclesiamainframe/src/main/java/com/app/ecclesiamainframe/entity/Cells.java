@@ -15,6 +15,8 @@ import javax.persistence.Id;
 //import javax.persistence.SqlResultSetMapping;
 import javax.persistence.Table;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -23,19 +25,8 @@ import lombok.Data;
  */
 @Entity
 @Table(name="cells_tb")
+@ApiModel(description = "All details about Cells. ")
 @Data
-//@SqlResultSetMapping(
-//	name = "CellMapping",
-//classes = @ConstructorResult(
-//    targetClass = Cells.class,
-//    columns = {
-//        @ColumnResult(name = "cellId", type = Long.class),
-//        @ColumnResult(name = "areaId", type = Long.class),
-//        @ColumnResult(name = "address"),
-//        @ColumnResult(name = "jurisdiction"),
-//        @ColumnResult(name = "environ"),
-//        @ColumnResult(name = "leader")
-//	}))
 public class Cells implements Serializable {
 	
 	/**
@@ -48,21 +39,27 @@ private static final long serialVersionUID = 1L;
 @Id
 @Column(name="cellId")
 @GeneratedValue(strategy = GenerationType.AUTO)
+@ApiModelProperty(notes = "The database generated Cell ID")
 private Long memberId;
 
 @Column(name="areaId")
+@ApiModelProperty(notes = "The cell's area's id")
 private Long areaId;
 
 @Column(name="address")
+@ApiModelProperty(notes = "The address of cell venue")
 private String address;
 
 @Column(name="jurisdiction")
+@ApiModelProperty(notes = "The cell's jurisdication")
 private String jurisdiction;
 
 @Column(name="environ")
+@ApiModelProperty(notes = "The cell's environ")
 private String environ;
 
 @Column(name="leader")
+@ApiModelProperty(notes = "The cell leader's name")
 private String leader;
 
 public Cells(Long cellId, Long areaId, String address, String jurisdiction, String environ, String leader) {
